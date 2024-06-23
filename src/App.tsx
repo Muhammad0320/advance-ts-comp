@@ -1,17 +1,13 @@
-import AButton from "./components/AButton";
-import Button from "./components/Buttons";
+import Form from "./components/Form";
 import Input from "./components/Inputs";
 
 function App() {
   return (
     <main>
-      <p>
-        <AButton href="https://google.com" />
-      </p>
-
-      <p>
-        <AButton disabled />
-      </p>
+      <Form>
+        <Input label="Name" id="name" type="string" />
+        <Input label="Age" id="age" type="number" />
+      </Form>
     </main>
   );
 }
