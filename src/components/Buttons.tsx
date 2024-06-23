@@ -1,5 +1,8 @@
 import { ComponentPropsWithoutRef, FC } from "react";
 
+
+
+// With Discriminate unions
 type AnchorType = ComponentPropsWithoutRef<"a"> & { el: "anchor" };
 
 type ButtonType = ComponentPropsWithoutRef<"button"> & { el: "button" };
