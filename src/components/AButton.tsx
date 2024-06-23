@@ -2,9 +2,9 @@ import { FC, type ComponentPropsWithoutRef } from "react";
 
 // With Type predicate
 
-type AnchorType = ComponentPropsWithoutRef<"a">;
+type AnchorType = ComponentPropsWithoutRef<"a"> & { href?: string };
 
-type ButtonType = ComponentPropsWithoutRef<"button">;
+type ButtonType = ComponentPropsWithoutRef<"button"> & { href?: never };
 
 type PropsType = AnchorType | ButtonType;
 
