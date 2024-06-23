@@ -9,7 +9,6 @@ import {
 type ContainerType<T extends ElementType> = PropsWithChildren<{ as?: T }> &
   ComponentPropsWithoutRef<T>;
 
-// const Container<K extends ElementType>: FC<ContainerType<K>> = ( {} ) => {};
 
 export default function Container<K extends ElementType>({
   as,
