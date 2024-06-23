@@ -24,9 +24,11 @@ const AButton: FC<PropsType> = (props) => {
 
   return (
     <button className="button" {...props}>
-      A fucking Button
+      {props.children}
     </button>
   );
 };
 
 export default AButton;
+
+
