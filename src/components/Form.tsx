@@ -5,11 +5,9 @@ type FormType = ComponentPropsWithoutRef<"form"> & {
 };
 
 
-type FormHandle = {
-
-    clear: () => void
-
-}   
+ export type FormHandle = {
+   clear: () => void;
+ };   
 
 
  const Form = forwardRef<FormHandle, FormType>( function  Form    ( { children, onSave, ...props }, ref ) {
