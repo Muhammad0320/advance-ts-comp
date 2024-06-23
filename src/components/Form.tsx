@@ -6,6 +6,9 @@ type FormType = ComponentPropsWithoutRef<"form"> & {
 
 const Form: FC<FormType> = ({ children, onSave, ...props }) => {
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+
+    e.preventDefault();
+
     const formData = new FormData(e.currentTarget);
 
     const data = Object.fromEntries(formData);
