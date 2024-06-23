@@ -14,10 +14,19 @@ const isAnchorProp = (props: PropsType): props is AnchorType => {
 
 const AButton: FC<PropsType> = (props) => {
   if (isAnchorProp(props)) {
-    return <a {...props}> A link </a>;
+    return (
+      <a className="button" {...props}>
+        {" "}
+        A link{" "}
+      </a>
+    );
   }
 
-  return <button {...props}>A fucking Button</button>;
+  return (
+    <button className="button" {...props}>
+      A fucking Button
+    </button>
+  );
 };
 
 export default AButton;
