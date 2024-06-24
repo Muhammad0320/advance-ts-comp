@@ -1,4 +1,4 @@
-import { createContext, ReactNode } from "react";
+import { createContext, ReactNode, useContext } from "react";
 import Timer from "../components/Timer";
 
 type Timer = {
@@ -19,7 +19,11 @@ type TimerContextType = TimerType & {
 
 const TimerContext = createContext<TimerContextType | null>(null);
 
-const TimerContextProvider = function ({ children }: { children: ReactNode }) {
+export const TimerContextProvider = function ({
+  children,
+}: {
+  children: ReactNode;
+}) {
   const ctxVal: TimerContextType = {
     timers: [],
     isRunning: false,
@@ -39,4 +43,13 @@ const TimerContextProvider = function ({ children }: { children: ReactNode }) {
   return (
     <TimerContext.Provider value={ctxVal}> {children} </TimerContext.Provider>
   );
+};
+
+export const useTimer = () => {
+  const context = useContext(TimerContext);
+
+  if (!context)
+    throw new Error("Timer context was used outside timer provider");
+
+  return context;
 };
