@@ -6,3 +6,4 @@ type DispatchFunctionType = () => AppDispatch;
 export const useCartDispatch: DispatchFunctionType = useDispatch;
 
 export const useCartSelector: TypedUseSelectorHook<RootSate> = useSelector;
+
