@@ -49,3 +49,5 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
  });
 
  export const { addToCart, removeFromCart } = CartReducer.actions;
+
+ addToCart({ id: "jj", price: 99, title: "ejje" });
