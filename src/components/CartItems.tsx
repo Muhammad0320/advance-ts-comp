@@ -1,9 +1,13 @@
+import { useCartSelector } from "../store/hooks";
+
 export default function CartItems() {
+  const cartItems = useCartSelector((state) => state.cart.cart);
+
+  if (!cartItems.length) return <p>No items in cart!</p>;
+
   return (
     <div id="cart">
-      <p>No items in cart!</p>
-
-      {/* <ul id="cart-items">
+      <ul id="cart-items">
           {cartItems.map((item) => {
             const formattedPrice = `$${item.price.toFixed(2)}`;
 
@@ -27,7 +31,7 @@ export default function CartItems() {
 
       {/* <p id="cart-total-price">
         Cart Total: <strong>{formattedTotalPrice}</strong>
-      </p> */}
+      </p>
     </div>
   );
 }
