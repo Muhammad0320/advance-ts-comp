@@ -27,7 +27,7 @@ export default function Timer({ name, duration }: TimerProp) {
     }
 
     return () => clearInterval(time);
-  }, []);
+  }, [isRunning]);
 
   const formattedtime = (remainingTime / 1000).toFixed(2);
 
