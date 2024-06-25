@@ -18,13 +18,15 @@ export default function Product({
   description,
 }: ProductProps) {
   function handleAddToCart() {
+    const dispatch = useCartDispatch();
+
     const data: CartData = {
       id,
       title,
       price,
     };
 
-    useCartDispatch(addToCart(data));
+    dispatch(addToCart(data));
   }
 
   return (
