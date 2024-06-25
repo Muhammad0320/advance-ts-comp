@@ -5,3 +5,6 @@ import { configureStore, createSlice } from "@reduxjs/toolkit";
      cart: createSlice,
    },
  });
+
+
+ export type AppDispatch = typeof store.dispatch;
