@@ -8,3 +8,5 @@ import { configureStore, createSlice } from "@reduxjs/toolkit";
 
 
  export type AppDispatch = typeof store.dispatch;
+
+export type RootSate = ReturnType<typeof store.getState>;
