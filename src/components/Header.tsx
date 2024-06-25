@@ -1,18 +1,30 @@
-import { useTimer } from "../store/timerContext";
-import AButton from "./UI/AButton";
+import { useState } from 'react';
+
+import Cart from './Cart.tsx';
 
 export default function Header() {
-  const { isRunning, startTimer, stopTimer } = useTimer();
+  const [cartIsVisible, setCartIsVisible] = useState(false);
+
+  function handleOpenCartClick() {
+    setCartIsVisible(true);
+  }
+
+  function handleCloseCartClick() {
+    setCartIsVisible(false);
+  }
 
   return (
-    <header>
-      <h1>ReactTimer</h1>
-
-      <AButton onClick={isRunning ? stopTimer : startTimer}>
-        {" "}
-        {isRunning ? "Stop Timer" : "Start timer"}{" "}
-      </AButton>
-    </header>
+    <>
+      {cartIsVisible && <Cart onClose={handleCloseCartClick} />}
+      <header id="main-header">
+        <div id="main-title">
+          <img src="logo.png" alt="Elegant model" />
+          <h1>Elegant Redux</h1>
+        </div>
+        <p>
+          <button onClick={handleOpenCartClick}>Cart (0)</button>
+        </p>
+      </header>
+    </>
   );
 }
-

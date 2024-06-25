@@ -1,17 +1,20 @@
-import AddTimer from "./components/AddTimer.tsx";
-import Header from "./components/Header.tsx";
-import Timers from "./components/Timers.tsx";
-import { TimerContextProvider } from "./store/timerContext.tsx";
+import Header from './components/Header.tsx';
+import Shop from './components/Shop.tsx';
+import Product from './components/Product.tsx';
+import { DUMMY_PRODUCTS } from './dummy-products.ts';
 
 function App() {
   return (
-    <TimerContextProvider>
+    <>
       <Header />
-      <main>
-        <AddTimer />
-        <Timers />
-      </main>
-    </TimerContextProvider>
+      <Shop>
+        {DUMMY_PRODUCTS.map((product) => (
+          <li key={product.id}>
+            <Product {...product} />
+          </li>
+        ))}
+      </Shop>
+    </>
   );
 }
 
